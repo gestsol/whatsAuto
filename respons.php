@@ -8,7 +8,7 @@ $group_name=$_POST["group_name"];
 
 $response= array(
 
-    "replay"=>"hola, recibimos tu mensaje $sender !!" 
+    "respuesta"=>"hola, recibimos tu mensaje $sender !!" 
 );
 
 echo json_encode($response);

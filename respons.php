@@ -14,7 +14,7 @@ switch ($message) {
       respuesta($r);
       break;
     case 1 ;
-        $r=" tu ubicacion es :https://www.google.cl/maps/@-33.4692352,-70.6445312,12z";
+        $r=" tu ubicacion es : https://www.google.cl/maps/place/Av.+Obispo+Manuel+Uma%C3%B1a+633,";
         respuesta($r);
         break;
      default:

@@ -2,13 +2,15 @@
 
 //$app_name= $_POST["app"];
 //$sender= $_GET["sender"];
-$message=$_POST["message"];
+$message1=$_POST["message"];
+$message= strtoupper($message1);
 //$phone=$_POST["phone"];
 //$group_name=$_POST["group_name"];
 
 switch ($message) {
-    case "hola";
-      $r="Hola Que tal, que deseas saber?";
+    case "HOLA";
+      $r="Hola Que tal, deseas saber la ubicación de tu Bus? <br>
+          ingresa 1 ó 2 para salir";
       respuesta($r);
       break;
     case 1 ;

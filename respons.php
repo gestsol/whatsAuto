@@ -14,7 +14,8 @@ switch ($message) {
       respuesta($r);
       break;
     case 1 ;
-        $r=" tu ubicacion es :https://www.google.cl/maps/?q=-33.499674,-70.6247611";
+        ubicar();
+        $r=" tu ubicacion es :https://www.google.cl/maps/?q=$lat,$lng";
         respuesta($r);
         break;
      default:
@@ -37,7 +38,39 @@ function respuesta($r)
     echo json_encode($response);
 }
 
+function ubicar(){
 
+    
+
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'http://www.trackermasgps.com/api-v2/tracker/get_state',
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => '',
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 0,
+  CURLOPT_FOLLOWLOCATION => true,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"hash": "58ae90720dab8246ca09692bf8f518e5", "tracker_id": 10184129}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type: application/json'
+  ),
+));
+
+$response = curl_exec($curl);
+
+curl_close($curl);
+
+$coord= json_decode($response);
+
+$lat=$coord->state->gps->location->lat ;
+$lng=$coord->state->gps->location->lng ;
+
+
+
+}
 
 
 ?>

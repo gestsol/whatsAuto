@@ -2,7 +2,7 @@
 
 //$app_name= $_POST["app"];
 //$sender= $_GET["sender"];
-$message1 = $_GET["message"];
+$message1 = $_POST["message"];
 $message = strtoupper($message1);
 //$phone=$_POST["phone"];
 //$group_name=$_POST["group_name"];

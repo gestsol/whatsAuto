@@ -22,7 +22,7 @@ switch ($message) {
     $url=urlencode($direccion);
 
 
-       $r = "https://www.google.cl/maps/place/$url";
+       $r = "https://www.google.cl/maps/search/$url";
         respuesta($r);
         break;
     default:
